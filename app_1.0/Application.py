@@ -18,9 +18,9 @@ class FileManager:
     
     def get_variables(self, active=True):
         if active:
-            return [name.split(".")[0] for name in os.listdir(self.__active_dir) if not name.startswith(".")]
+            return [name.split(".")[0] for name in os.listdir(self.__active_dir)]
         else:
-            return [name.split(".")[0] for name in os.listdir(self.__inactive_dir)if not name.startswith(".")]
+            return [name.split(".")[0] for name in os.listdir(self.__inactive_dir)]
     
     def get_options(self, name):
         var_dir = self.find_variable(name)
@@ -38,7 +38,7 @@ class FileManager:
             options[-1] = options[-1].strip()
 
         return options
-    
+
     def add_variable(self, name: str, categories = []):
 
         filename = name + ".csv"
@@ -53,6 +53,16 @@ class FileManager:
 
             new_variable.write("\n")
     
+    def add_entry(self, entry: dict, date_str: str):
+        cur_id = uuid.uuid4()
+        
+        with open(self.__days_dir, "a") as day_file:
+            day_file.write(str(cur_id) + "," + date_str + "\n")
+        
+        for variable in entry:
+            with open(self.find_variable(variable), "a") as var_file:
+                var_file.write(str(cur_id) + "," + str(entry[variable]) + "\n")
+
     def find_variable(self, name):
 
         filename = name + ".csv"
@@ -112,7 +122,19 @@ class FileManager:
                     return ">100"
                 count += 1
             else:
-                return count      
+                return count   
+
+    def is_date_recorded(self, date_str: str):
+        found = False
+        with open(self.__days_dir, "r") as day_file:
+            for line in day_file:
+                try:
+                    if line.split(",")[1].strip() == date_str:
+                        found = True
+                except:
+                    break
+
+        return found 
     
     def delete_variable(self, name: str):
         file_dir = self.find_variable(name)
@@ -408,8 +430,8 @@ class Interface:
                 break
 
     def update_screen(self):
-        os.system("clear")
-        os.system("clear")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         date = self.__cur_date.strftime("%d.%m.%Y")
 
@@ -428,28 +450,22 @@ class Interface:
         self.__cur_date = date
 
     def add_entry(self):
-        entry = {}
+
         active_variables = self.__manager.get_variables()
 
-        found = None
-
-        with open(self.__manager.get_days_file(), "r") as day_file:
-            for line in day_file:
-                try:
-                    if line.split(",")[1].strip() == self.__cur_date.strftime(self.__date_format):
-                        found = line.split(",")[0]
-                except:
-                    break
-
-        if found != None:
+        if len(active_variables) == 0:
+            print("no active variables")
+            input("press enter to continue")
+            return
+        
+        cur_date_str = self.__cur_date.strftime(self.__date_format)
+        
+        if self.__manager.is_date_recorded(cur_date_str):
             print("an entry for this date already exists")
             input("press enter to continue")
             return
 
-            # command = self.input_command("an entry for this date already exists, do you want to rewrite the entry? 1 - yes, 0 - no")
-
-            # if command == "0":
-            #     return
+        entry = {}
             
         for variable in active_variables:
             options = self.__manager.get_options(variable)
@@ -469,15 +485,7 @@ class Interface:
 
                 entry[variable] = inp
 
-
-        cur_id = uuid.uuid4()
-        
-        with open(self.__manager.get_days_file(), "a") as day_file:
-            day_file.write(str(cur_id) + "," + self.__cur_date.strftime(self.__date_format) + "\n")
-        
-        for variable in entry:
-            with open(self.__manager.find_variable(variable), "a") as var_file:
-                var_file.write(str(cur_id) + "," + str(entry[variable]) + "\n")
+        self.__manager.add_entry(entry, cur_date_str)
         
         self.__cur_date = self.__cur_date + timedelta(days=1)
         
@@ -486,9 +494,6 @@ class Interface:
         self.__manager.export(name)
         print("the data was exported as a " + name + ".csv" + " file")
         input("press enter to continue")
-
-        
-
 
     def execute(self):
 
