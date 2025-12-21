@@ -25,4 +25,4 @@ The bigger puprose of this application is not only to provide a way for users to
 
 ## Checkout the video installation instructions and a preview
 
-https://helsinkifi-my.sharepoint.com/:v:/g/personal/gorsandr_ad_helsinki_fi/IQBkIWDfO0_6RqPBTE8v4i_hAZtKWQA4Gmfw6ncmizyNwto?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3Pbwp2
+https://helsinkifi-my.sharepoint.com/:v:/g/personal/gorsandr_ad_helsinki_fi/IQBH4aHEyCmhQIr87qVZQ7FhAb4lF7DIfDYb3-vKj63zw0s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=S57wfk
