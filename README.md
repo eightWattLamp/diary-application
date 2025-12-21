@@ -15,10 +15,14 @@ The bigger puprose of this application is not only to provide a way for users to
 ## Installation instructions
 
 1. Download and unarchive this project
-2. Inside the main directory, "app_1.0", expand all directories.
+2. Inside the main directory, "app_1.1", expand all directories.
 3. In the following paths:
-    * app_1.0 > variables > inactive
-    * app_1.0 > variables > active
-    * app_1.0 > export
+    * app_1.1 > variables > inactive
+    * app_1.1 > variables > active
+    * app_1.1 > export
     You will find files named "dummy_file.csv" (3 files with this name in total). Delete all 3 dummy files, without changing the folder structure.
 4. Open the application script named "Application.py" and run it with a regular python compiler.
+
+## Checkout the video installation instructions and a preview
+
+https://helsinkifi-my.sharepoint.com/:v:/g/personal/gorsandr_ad_helsinki_fi/IQBkIWDfO0_6RqPBTE8v4i_hAZtKWQA4Gmfw6ncmizyNwto?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3Pbwp2
