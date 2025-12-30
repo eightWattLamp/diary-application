@@ -17,9 +17,9 @@ The bigger puprose of this application is not only to provide a way for users to
 1. Download and unarchive this project
 2. Inside the main directory, "app_1.1", expand all directories.
 3. In the following paths:
-    * app_1.1 > variables > inactive
-    * app_1.1 > variables > active
-    * app_1.1 > export
+    * app > variables > inactive
+    * app > variables > active
+    * app > export
     You will find files named "dummy_file.csv" (3 files with this name in total). Delete all 3 dummy files, without changing the folder structure.
 4. Open the application script named "Application.py" and run it with a regular python compiler.
 
