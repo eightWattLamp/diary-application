@@ -15,7 +15,7 @@ The bigger puprose of this application is not only to provide a way for users to
 ## Installation instructions
 
 1. Download and unarchive this project
-2. Inside the main directory, "app_1.1", expand all directories.
+2. Inside the main directory, "app", expand all directories.
 3. In the following paths:
     * app > variables > inactive
     * app > variables > active
