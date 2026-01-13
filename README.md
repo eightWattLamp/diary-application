@@ -2,7 +2,7 @@
 
 ## An application for tracking personal daily behaviour based on custom variables.
 
-This project is inspired by WHOOP’s journal and recovery‑analysis features. It extends that concept by allowing custom variables. The analysis of influences of variables on each other (not implemented in the project at the moment) will be designed to be more tranparent, allowing users to know the statistical tools used to assess the trends in daily behaviour.
+This project is inspired by WHOOP’s journal and recovery‑analysis features. It extends that concept by allowing custom variables. The analysis of influences of variables on each other (not implemented in the project at the moment) will be designed to be more transparent, allowing users to know the statistical tools used to assess the trends in daily behaviour.
 
 The aim of the application is to generate daily surveys for the user based on the behaviours or variables to be tracked. The variables are first created by the user, with name and type of the variable specified. For example, the following three variables with corresponding types can be created:
 
